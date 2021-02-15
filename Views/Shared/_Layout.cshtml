@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Lab 3</title>
+    <link href="~/Views/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Author: Mason Fatoric Welcome to my lab 3 page</h1>
+        <br />
+        <br />
+        @Html.ActionLink("Home", "Index", "Home") &nbsp;
+        @Html.ActionLink("Show the Song", "Razor", "Home") &nbsp;
+        @Html.ActionLink("Person","CreatePerson","Home") &nbsp;
+    </header>
+    <div class="content">
+        @RenderBody();
+    </div>    
+    <footer>
+        Footer:
+    </footer>
+</body>
+
+</html>

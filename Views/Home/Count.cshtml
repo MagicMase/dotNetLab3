@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+
+@{
+    ViewData["Title"] = "Count bottles";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<form asp-controller="Home" asp-action="Razor" method="post">
+    <h3>Table</h3>
+    <table style="width: 100%; border-spacing: 0;">
+        <tr>
+            <td>
+                <button type="submit" name="Razor" value="Razor">@Html.ActionLink("Play Again", "Razor", "Home")</button>
+            </td>
+        </tr>
+        @{
+            @if (int.TryParse(ViewData["Bottles"].ToString(), out int intVal))
+        }
+
+        {
+        @for (var i = intVal; i > 0; i--)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @i green bottles@((i-1) > 1 ? "s" : "") standing on the wall,<br />
+                        @i green bottles@((i-1) > 1 ? "s" : "") standing on the wall,<br />
+                        And if one green bottle should accedently fall ,<br />
+                        There'll be @((i-1) > 0 ? (i-1).ToString() : "no") green bottle@((i-1) > 1 ? "s" : "") standing on the wall
+                    </p>
+                </td>
+            </tr>
+        }
+        }
+        <tr>
+            <td>
+                <p>
+                    There is no green bottle standing on the wall.
+                </p>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+<br />
+<br />
+<br />
+@Html.ActionLink("Go Home", "Index", "Home") &nbsp;

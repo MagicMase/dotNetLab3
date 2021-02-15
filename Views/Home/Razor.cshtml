@@ -1,0 +1,27 @@
+﻿@{
+        ViewData["Title"] = "Green Bottles";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<form asp-controller="Home" asp-action="Count" method="post">
+    <h3>Table</h3>
+    <table style="width: 100%; border-spacing: 0;">
+        <tr>
+            <td>
+                <p>Enter the number of bottles</p>
+                <input type="number" min="50" max="100" name="Bottles" />
+            </td>
+            <td>
+                <button type="submit" name="Count" value="Bottles">Count the bottles</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+
+<br />
+<br />
+<br />
+@Html.ActionLink("Go Home", "Index", "Home") &nbsp;
